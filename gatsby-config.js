@@ -152,5 +152,5 @@ module.exports = {
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
-  pathPrefix: process.env.PATH_PREFIX || '/status/'
+  pathPrefix: process.env.PATH_PREFIX || '/adobe-status/'
 };
