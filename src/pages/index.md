@@ -1,5 +1,5 @@
 ---
-title: Overview - Adobe Analytics
+title: Overview - Adobe Status API
 description: This is the overview page of Adobe Analytics
 contributors:
   - https://github.com/icaraps 
