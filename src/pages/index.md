@@ -31,7 +31,7 @@ Adobe Status API's provide detailed information and real time updates about Adob
 ### Get Started
 
 [Quickstart Guide](guides/)
-    
+
 Get started with the Adobe Status APIs.
 
 <DiscoverBlock slots="heading, link, text"/>
@@ -39,7 +39,7 @@ Get started with the Adobe Status APIs.
 ### Guides
 
 [Calculated Metrics API](guides/calculated_metrics_api/)
-     
+
 Returns information on the user's company that is necessary for making other Adobe Status API calls.
 
 <DiscoverBlock slots="link, text"/>
