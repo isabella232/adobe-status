@@ -5,7 +5,7 @@ node_modules
 
 yarn-error.log
 .editorconfig
-.env
+# .env
 
 # OS and IDE generated files #
 ##############################
