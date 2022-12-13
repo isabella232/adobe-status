@@ -1,30 +1,28 @@
 ---
-title: Overview - Adobe Analytics
-description: This is the overview page of Adobe Analytics
+title: Overview - Adobe Status API
+description: This is the overview page of Adobe Status API
 contributors:
-  - https://github.com/icaraps 
+  - https://github.com/adobe-rajat 
 ---
 
 <Hero slots="heading, text"/> 
 
-# Adobe Analytics API
+# Adobe Status API
 
-Adobe Product API offers limitless ways to integrate your most important customer data into key business processes. Adobe Product API offer limitless ways.
+Adobe Status API's provide detailed information and real time updates about Adobe cloud products and services outage, disruption and maintenance events.
 
 <Resources slots="heading, links"/>
 
 #### Resources
 
-* [Quickstart Guide](https://www.adobe.io/apis/experiencecloud/analytics/docs.html)
-* [Adobe Analytics Github Repo](https://github.com/AdobeDocs/analytics-2.0-apis)
+* [Quickstart Guide](https://developer.adobe.com)
+* [Adobe Status Github Repo](https://github.com/AdobeDocs/dev-site)
 
 ## Overview
 
-This documentation provides instructions for Adobe Analytics 2.0 APIs. For working with Analytics 1.4 APIs, see [Analytics 1.4 API Documentation](https://github.com/AdobeDocs/analytics-1.4-apis).
+This documentation provides instructions for Adobe Status 1.0 APIs. For working with Adobe Status APIs, see [Adobe Status API Documentation](https://github.com/AdobeDocs/dev-site).
 
-The Adobe Analytics APIs are a collection of APIs that power Adobe Analytics products like Analysis Workspace. 
-The APIs allow for the creation of data rich user interfaces that you can use to manipulate and integrate data.
-You can also create reports to explore, get insights, or answer important questions about your data.
+Adobe Status API's provide detailed information and real time updates about Adobe cloud products and services outage, disruption and maintenance events. Use these API's to integrate into your own monitoring system or dashboards to view real time events from Adobe Status that can be filtered based on Product, Product Offering, Region, Environment(where available), Locale and Event types.
 
 ## Discover 
 
@@ -34,7 +32,7 @@ You can also create reports to explore, get insights, or answer important questi
 
 [Quickstart Guide](guides/)
     
-Get started with the Adobe Analytics APIs.
+Get started with the Adobe Status APIs.
 
 <DiscoverBlock slots="heading, link, text"/> 
 
@@ -42,7 +40,7 @@ Get started with the Adobe Analytics APIs.
 
 [Calculated Metrics API](guides/calculated_metrics_api/) 
      
-Returns information on the user's company that is necessary for making other Adobe Analytics API calls.
+Returns information on the user's company that is necessary for making other Adobe Status API calls.
 
 <DiscoverBlock slots="link, text"/>
 
@@ -80,5 +78,5 @@ request with your contribution. For more information, refer to the [contributing
 
 The timeout for API requests through adobe.io is currently *60 seconds*.
 
-The default rate limit for an Adobe Analytics Company is *120 requests per minute*. (The limit is enforced as *12 requests every 6 seconds*).
+The default rate limit for an Adobe Status Company is *120 requests per minute*. (The limit is enforced as *12 requests every 6 seconds*).
 When rate limiting is being enforced you will get `429` HTTP response codes with the following response body: `{"error_code":"429050","message":"Too many requests"}`    
