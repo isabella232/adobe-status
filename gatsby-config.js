@@ -11,7 +11,7 @@
  */
 
 module.exports = {
-  pathPrefix: process.env.PATH_PREFIX || '/dobe-status/',
+  pathPrefix: process.env.PATH_PREFIX || '/adobe-status/',
   siteMetadata: {
     versions: [
       {
