@@ -153,7 +153,7 @@ info:
 
     # Postman Collection 
 
-    - Download Status API postman collection and environment variable from here - [Postman Collection](/adobe-ststus/postman-collection-and-env.zip)  
+    - Download Status API postman collection and environment variable from here - [Postman Collection](/adobe-status/postman-collection-and-env.zip)  
 
     - Import both collection and environment variables into your postman 
 
@@ -165,13 +165,13 @@ info:
 
     ### Environment Variable Reference
 
-    ![alt text](/adobe-ststus/images/status-api-env.png "Adobe Status API Environment Variable")
+    ![alt text](/adobe-status/images/status-api-env.png "Adobe Status API Environment Variable")
 
     ### Status API Postman Collection Reference
 
-    ![alt text](/adobe-ststus/images/status-api-collection.png "Adobe Status API Collection")
+    ![alt text](/adobe-status/images/status-api-collection.png "Adobe Status API Collection")
 
-    ![alt text](/adobe-ststus/images/status-api-testing.png "Adobe Status API Collection Endpoint Validation")
+    ![alt text](/adobe-status/images/status-api-testing.png "Adobe Status API Collection Endpoint Validation")
 
 
   contact:
