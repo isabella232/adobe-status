@@ -58,7 +58,7 @@ Provides configuration guidance and best practices for the /reports endpoint.
 
 [Migrating from 1.4 to 2.0](guides/migrating/)
 
-For help migrating from the 1.4 versions of the Analytics API to the newer and more capable /reports API.
+For help migrating from the 1.4 versions of the Status API to the newer and more capable /reports API.
 
 <DiscoverBlock width="100%" slots="heading, link, text"/>
 
@@ -66,7 +66,7 @@ For help migrating from the 1.4 versions of the Analytics API to the newer and m
 
 [Try the API](api/)
 
-Try the Analytics API with Swagger UI. Explore, make calls, with full endpoint descriptions.
+Try the Status API with Swagger UI. Explore, make calls, with full endpoint descriptions.
 
 ## Contributing
 
