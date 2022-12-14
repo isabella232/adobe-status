@@ -36,6 +36,18 @@ info:
 
     ### Sample code to generate JWT and retrieve access token from IMS
 
+
+    ## NodeJs Code Snipet
+
+    - Make sure `node` installed on your machine 
+
+    - Add all required packages into the project eg., `npm install @adobe/jwt-auth` 
+
+    - Get the credentials from the developer console website -> 'Service Accounts(JWT)' credentials page of your project and replace the values in the sample code 
+
+    - Set the location of the private key downloaded during the Adobe Status API onboarding in the developer console
+
+
     ```javascript
 
     const auth = require("@adobe/jwt-auth");
@@ -43,7 +55,7 @@ info:
     const fs = require('fs');
     
 
-    // set the location of the downloaded private key
+    // Set the location of your priviate key downloaded during the Status API onboading in the Adobe Developer Console
 
     const privateKey = fs.readFileSync('data/private.key', 'utf8');
 
@@ -65,7 +77,102 @@ info:
 
     ```
 
+    ## Python Code Snipet
+
+    - Below code tested in Python version 3.9
+
+    - Install below packages :
+
+      - `pip3 install PyJWT`
+
+      - `pip3 install "pyjwt[crypto]"`
+
+      - `pip3 install "requests"`
+
+    - Get the credentials from the developer console website -> 'Service Accounts(JWT)' credentials page of your project and replace the values in the sample code 
+
+    - Set the location of the private key downloaded during the Status API onboarding in the developer console
+
+
+    ```python
+
+    import datetime;
+
+    import json;
+
+    import jwt;
+
+    import os;
+
+    import requests;
+
+
+    url = 'https://ims-na1.adobelogin.com/ims/exchange/jwt';
+
+
+    # Replace Organization_ID, Technical_Account_ID and Client_ID with yours
+
+    # which can be obtain from the Adobe Developer Console integration
+
+    jwtPayloadRaw = """{ "iss": "<Organization_ID>", 
+                        "sub": "<Technical_Account_ID>", 
+                      "https://ims-na1.adobelogin.com/s/ent_status_api": true,
+                      "aud": "https://ims-na1.adobelogin.com/c/<Client_ID>"}"""; 
+
+
+    jwtPayloadJson = json.loads(jwtPayloadRaw);
+
+    jwtPayloadJson["exp"] = datetime.datetime.utcnow() + datetime.timedelta(seconds=30);
+
+
+    accessTokenRequestPayload = {'client_id': '7028************dd5'  #Your Client ID from the Adobe Developer Console integration
+                                ,'client_secret': 'p8******************1ae'};  #Your Client Secret from the Adobe Developer Console integration
+
+    #Set the location of your priviate key downloaded during the Status API onboading in the Adobe Developer Console
+
+    keyfile = open(os.path.join(os.path.expanduser('~'),'data/private.key'),'r'); 
+
+
+    private_key = keyfile.read();
+
+    jwttoken = jwt.encode(jwtPayloadJson, private_key, algorithm='RS256');
+
+    accessTokenRequestPayload['jwt_token'] = jwttoken;
+
+    result = requests.post(url, data = accessTokenRequestPayload);
+
+    resultjson = json.loads(result.text);
+
+    print(resultjson["access_token"]);
+
+    ```
+
+
     for more [JWT sample codes](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/samples/)
+
+
+    # Postman Collection 
+
+    - Download Status API postman collection and environment variable from here - [Postman Collection](data/postman-collection-and-env.zip)  
+
+    - Import both collection and environment variables into your postman 
+
+    - Replace below credentials with yours and run collection endpoints 
+
+      - CLIENT_ID, TECHNICAL_ACCOUNT_ID , TECHNICAL_ACCOUNT_ID and CLIENT_SECRET  
+
+      - PRIVATE_KEY – Replace private key which is obtained during the Adobe Status API onboarding in the developer console
+
+    ### Environment Variable Reference
+
+    ![alt text](/images/status-api-env.png "Adobe Status API Environment Variable")
+
+    ### Status API Postman Collection Reference
+
+    ![alt text](/images/status-api-collection.png "Adobe Status API Collection")
+
+    ![alt text](/images/status-api-testing.png "Adobe Status API Collection Endpoint Validation")
+
 
   contact:
     name: Status.adobe
