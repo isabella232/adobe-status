@@ -1,6 +1,6 @@
 ---
-title: Support - Cat Analytics
-description: This is the support page of Cat Analytics 
+title: Support - Status API
+description: This is the support page of Status API 
 ---
 
 <Hero slots="heading, text" background="rgb(19, 93, 183)"/>

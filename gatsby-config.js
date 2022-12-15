@@ -40,8 +40,13 @@ module.exports = {
     subPages: [
       {
         title: 'Get Started',
-        path: '/guides/'
-
+        path: '/guides/',
+        pages: [
+          {
+            title: 'Postman Collection',
+            path: '/guides/using_postman/'
+          }
+        ]
       },
       {
         title: 'Overview',
