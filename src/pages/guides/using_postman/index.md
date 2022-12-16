@@ -1,6 +1,6 @@
 # Postman Collection
 
-- Download Status API postman collection and environment variable from here - [Postman Collection](/adobe-status/postman-collection-and-env.zip)
+- Download Status API postman collection and environment variable from here - [Postman Collection](/postman-collection-and-env.zip)
 - Import both collection and environment variables into your postman
 - Replace below credentials with yours and run collection endpoints
     - CLIENT_ID, TECHNICAL_ACCOUNT_ID , TECHNICAL_ACCOUNT_ID and CLIENT_SECRET
