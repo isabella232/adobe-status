@@ -7,7 +7,7 @@ contributors:
 
 <Hero slots="heading, text"/>
 
-# Adobe Status API
+# Adobe Status API Documentation
 
 Adobe Status API's provide detailed information and real time updates about Adobe cloud products and services outage, disruption and maintenance events.
 
