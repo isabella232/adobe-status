@@ -5,46 +5,9 @@ description: This is the support page of Status API
 
 <Hero slots="heading, text" background="rgb(19, 93, 183)"/>
 
-# Support
+# Adobe Status 1.0 API Support
 
-Learn where to ask questions, report bugs, make feature requests, and spark discussions.
+Learn how to contact Adobe Status team for issues and feedback.
 
-## Feedback
+Please contact Adobe Status support at statuscom-adobe-support@adobe.com for any issues you are facing with calling Status API's or for feedback in general.
 
-You've got a place to start discussions.
-
-<DiscoverBlock slots="image, heading, link, text" width="25%"/>
-
-![Cat Experience Cloud](experience_cloud.png)
-
-### Developer forum
-
-[Get started](https://adobe.io)
-
-Open discussion and support with community experts and Adobe staff.
-
-<DiscoverBlock slots="link, text" width="25%"/>
-
-[Experience league](https://adobe.io)
-
-Tutorials and videos for the whole community.
-
-<DiscoverBlock slots="link, text" width="25%"/>
-
-[Experience forum](https://adobe.io)
-
-Forum to get help and help others
-
-## Community
-
-You've got a place to join the conversation.
-
-<DiscoverBlock slots="image, heading, link, text" width="100%"/>
-
-![Stack Overflow](stack-overflow.png)
-
-### Stack Overflow
-
-[Explore](https://adobe.io)
-
-Developer Q&A using a specific tag.
