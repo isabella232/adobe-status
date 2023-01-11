@@ -45,6 +45,10 @@ module.exports = {
           {
             title: 'Postman Collection',
             path: '/guides/using_postman/'
+          },
+          {
+            title: 'Product Hierarchy',
+            path: '/guides/product-hierarchy.md'
           }
         ]
       },
