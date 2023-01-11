@@ -10,4 +10,3 @@ description: This is the support page of Status API
 Learn how to contact Adobe Status team for issues and feedback.
 
 Please contact Adobe Status support at statuscom-adobe-support@adobe.com for any issues you are facing with calling Status API's or for feedback in general.
-
