@@ -48,7 +48,11 @@ module.exports = {
           },
           {
             title: 'Product Hierarchy',
-            path: '/guides/product-hierarchy.md'
+            path: '/guides/product-hierarchy/'
+          },
+          {
+            title: 'Sample API Calls',
+            path: '/guides/sample-api-calls/'
           }
         ]
       },
