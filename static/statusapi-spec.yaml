@@ -1,37 +1,12 @@
 openapi: 3.0.1
 info:
-  title: Adobe Status API
+  title: Adobe Status API Reference
   description: >
-    Adobe Status API's provide detailed information and real time updates about
-    Adobe cloud products and services outage, disruption and maintenance events.
-    Use these API's to integrate into your own monitoring system or dashboards
-    to view real time events from Adobe Status that can be filtered based on
-    Product, Product Offering, Region, Environment(where available), Locale and
-    Event types.
+    Please complete the setup by following the Guides. If you need sample code to generate JWT token, you can find it below. Once the setup is complete, you can find the API specs under Events and Registry.
 
 
-    # Authentication
-
-
-    Adobe Status API need two forms of authentication:
-      - API Key
-      - JWT access token
-
-    Use the [Adobe Developer Console](https://developer.adobe.com/console/home)
-    to obtain client credentials and JWT token by creating a new Project. Once
-    you create a project, you can add Adobe Status API that includes API Keys
-    (Client ID) and other access credentials. You can then obtain a secure
-    access token from Adobe for each API session.
-
-
-    *Note:* A project can include one or more services. In many cases, you will
-    use the same client credentials to access multiple Adobe products and
-    services.
-
-    To learn more about creating projects in Adobe Developer Console, read the
-    [Console getting started
-    guide](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 
-    
+    # Overview
+        
     <SecurityDefinitions />
 
     ### Sample code to generate JWT and retrieve access token from IMS
@@ -151,7 +126,7 @@ info:
     for more [JWT sample codes](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/samples/)
 
 
-    # Postman Collection 
+    ## Postman Collection 
 
     - Download Status API postman collection and environment variable from here - [Postman Collection](/adobe-status/postman-collection-and-env.zip)  
 
