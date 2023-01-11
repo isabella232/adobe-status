@@ -26,4 +26,3 @@ The Adobe Status 1.0 APIs allow you to directly call Adobe's servers to query an
 This user guide assumes that you have an intermediate understanding of Adobe Status.
 
 This user guide adheres to Adobe's Code of Conduct. Contributions are encouraged and appreciated. See Adobe's Code of Conduct and Contribution guidelines on GitHub for more information.
-
