@@ -13,12 +13,6 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/adobe-status/',
   siteMetadata: {
-    versions: [
-      {
-        title: 'v1.0',
-        selected: true
-      }
-    ],
     pages: [
       {
         title: 'Adobe Status API',
