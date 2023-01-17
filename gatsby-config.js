@@ -43,10 +43,6 @@ module.exports = {
         path: '/guides/',
         pages: [
           {
-            title: 'Postman Collection',
-            path: '/guides/using_postman/'
-          },
-          {
             title: 'Product Hierarchy',
             path: '/guides/product-hierarchy/'
           },
@@ -62,7 +58,7 @@ module.exports = {
         header: true,
         pages: [
           {
-            title: 'Help',
+            title: 'FAQ',
             path: '/support/'
           }
         ]
