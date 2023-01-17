@@ -5,15 +5,14 @@ description: This is the guides overview page of Status API
 
 # Getting started with the Adobe Status API
 
+
 There are several steps to take before using the Status APIs.
 
 Permissions: Configure permissions for the developer in the Adobe Admin Console.  
 API Client: Create a client configuration in the Adobe Developer Console.  
 Authentication: Obtain the necessary credentials to send data to Adobe.  
 
-Once the setup is complete you can refer to -  
-Product hierarchy: View of Product taxonomy on status.adobe.com.  
-Sample API calls: Some examples of API signature and prerequisites to call Status API's.  
+Once the setup is complete you can refer to Product Hierarchy and Sample API calls from the left menu.
 
 ## Permissions
 
