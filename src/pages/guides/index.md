@@ -13,7 +13,7 @@ There are several steps to take before using the Status APIs.
 
 Once the setup is complete you can refer to Product hierarchy and Sample API calls from the left menu.
 
-## Permissions
+# Permissions
 
 Before starting to use the Status API, you must make sure that your account has the correct permissions to send requests. Even if you successfully authenticate with an Adobe ID, you cannot make requests to Adobe unless your account contains the correct organization permissions.
 
@@ -31,7 +31,7 @@ Give a developer correct API permissions as a product profile admin:
 8. Click Save.
 See Managing developers in the Enterprise Admin user guide for more information.
 
-## API Client
+# API Client
 
 Once you are a developer for a Adobe product profile, you can create an Sttaus API client in the Adobe Developer Console.
 
@@ -42,7 +42,7 @@ Once you are a developer for a Adobe product profile, you can create an Sttaus A
 To learn more about creating projects in Adobe Developer Console, read the [Console getting started guide](https://developer.adobe.com/developer-console/docs/guides/getting-started/).
 At this point, you decide how you want to authenticate with the API.
 
-## Authentication
+# Authentication
 
 Status API needs JWT token for authentication. Follow the steps below to setup your access token -
 
