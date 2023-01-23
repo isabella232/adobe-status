@@ -25,4 +25,4 @@ Please refer to the Guides -> Product Hierarchy section.
 Yes. Please refer to API Reference menu item for NodeJs and Python code snippet to generate JWT access token. If you use Postman, you can refer to Postman section on API Reference for a downloadable Postman collection and environment variable files. All API's come with CLI, Javascript and NodeJS samples.
 
 ## How do I get more help if I run into issues?
-Please contact Adobe support.
+Please contact Adobe support at https://experienceleague.adobe.com/?support-tab=home#support
