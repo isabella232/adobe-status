@@ -35,6 +35,7 @@ module.exports = {
       {
         title: 'Get Started',
         path: '/guides/',
+        header: true,
         pages: [
           {
             title: 'Product Hierarchy',
