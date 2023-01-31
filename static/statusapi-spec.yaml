@@ -180,13 +180,20 @@ paths:
       parameters:
         - name: cloudId
           in: query
-          description: List of cloud ids for which you want to retrieve the events.
+          description: List of cloud ids for which you want to retrieve the cloud detail.
           style: form
           explode: true
           schema:
             type: array
             items:
               type: string
+        - name: cloudName
+          in: query
+          description: Partial or complete cloud name for which you want to retrieve the cloud detail.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -789,6 +796,14 @@ paths:
       summary: Messages
       description: List all the messages for an event impacting Adobe products.
       operationId: messagesUsingGET
+      parameters:
+        - name: messageToken
+          in: query
+          description: Message token for which you want to retrieve the messages.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -840,6 +855,13 @@ paths:
           in: path
           description: Locale for fetching message details.
           required: true
+          schema:
+            type: string
+        - name: messageToken
+          in: query
+          description: Message token for which you want to retrieve the messages.
+          style: form
+          explode: true
           schema:
             type: string
       responses:
@@ -897,13 +919,20 @@ paths:
               type: string
         - name: productId
           in: query
-          description: List of product ids for which you want to retrieve the events.
+          description: List of product ids for which you want to retrieve the product detail.
           style: form
           explode: true
           schema:
             type: array
             items:
               type: string
+        - name: productName
+          in: query
+          description: Partial or complete product name for which you want to retrieve the product detail.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
