@@ -34,18 +34,15 @@ module.exports = {
     subPages: [
       {
         title: 'Get Started',
-        path: '/guides/',
-        header: true,
-        pages: [
-          {
-            title: 'Product Hierarchy',
-            path: '/guides/product-hierarchy/'
-          },
-          {
-            title: 'Sample API Calls',
-            path: '/guides/sample-api-calls/'
-          }
-        ]
+        path: '/guides/get-started'
+      },
+      {
+        title: 'Product Hierarchy',
+        path: '/guides/product-hierarchy/'
+      },
+      {
+        title: 'Sample API Calls',
+        path: '/guides/sample-api-calls/'
       },
       {
         title: 'Overview',
