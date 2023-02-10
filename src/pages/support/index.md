@@ -9,8 +9,8 @@ description: This is the support page of Status API
 
 Find answers to frequently asked questions here.
 
-## Do Adobe Status API's provide  more information than what's available on status.adobe.com?
-No. Status API's provide same information as status.adobe.com. Just as Status UI allows you to filer events on Cloud and Product pages, you can do the same via API's. It gives you flexibility to plug that filtered view into your internal dashboards.
+## Do Adobe Status API's provide  more information than what is available on status.adobe.com?
+No. Status API's provide same information as status.adobe.com. Just like Status.adobe.com allows you to filer events on Cloud and Product pages, same functionality is available via API's. API's provide you the flexibility to plug that filtered view into your internal dashboards.
 
 ## Do I need permissions to access Status API's?
 Yes. Your Organization needs to have at least one Adobe product entitlement and your Adobe Developer Console account should be entitled to a Adobe Product. If your account is correctly setup, you should be able to see and add Adobe Status API's to your project.
