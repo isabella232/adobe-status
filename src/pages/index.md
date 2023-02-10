@@ -23,6 +23,10 @@ The Adobe Status APIs are a collection of APIs that provide detailed information
 
 The Adobe Status 1.0 APIs allow you to directly call Adobe's servers to query and view events just like on status.adobe.com UI. You can use these API's to integrate into your own monitoring system or dashboards to view real time events from Adobe Status that can be filtered based on Product, Product Offering, Region, Environment(where available), Locale and Event type. This documentation provides instructions on how to call Adobe's endpoints to return the desired data.
 
+* [Quickstart Guide](https://developer-stage.adobe.com/adobe-status/guides/)
+* [API Reference](https://developer-stage.adobe.com/adobe-status/api/)
+* [Github Repo](https://github.com/AdobeDocs/dev-site)
+
 This user guide assumes that you have an intermediate understanding of Adobe Status.
 
 This user guide adheres to Adobe's Code of Conduct. Contributions are encouraged and appreciated. See Adobe's Code of Conduct and Contribution guidelines on GitHub for more information.
