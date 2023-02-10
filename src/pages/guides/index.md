@@ -17,9 +17,9 @@ Once the setup is complete you can refer to Product hierarchy and Sample API cal
 
 Before starting to use the Status API, you must make sure that your account has the correct permissions to send requests. Even if you successfully authenticate with an Adobe ID, you cannot make requests to Adobe unless your account contains the correct organization permissions.
 
-Your Organization needs to have entitlements for at least one Adobe product to be able to access Adobe APIs.
+Your organization needs to have entitlements for at least one Adobe product to be able to access Adobe APIs. At this point, only Enterprise accounts have access to Status APIs. Team accounts do not have permissions to access the APIs.
 
-Give a developer correct API permissions as a product profile admin:
+If your organization has Enterprise licenses, please follow these steps to assign product profile admin permissions to the developer who will access Status APIs:
 
 1. Navigate to adminconsole.adobe.com.
 2. Check the organization name in the top right to make sure that you are logged in to the correct company.
