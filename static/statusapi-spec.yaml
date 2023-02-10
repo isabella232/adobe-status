@@ -2,15 +2,17 @@ openapi: 3.0.1
 info:
   title: Adobe Status API Reference
   description: >
-    This guide will help you complete the setup needed to call Status API's. The following sections contain sample code snippets for generating tokens.  Once the setup is complete, you can find the API specs under Events and Registry. All the API's have CLI, Javascript and NodeJS code request samples.
+    This guide will help you complete the setup needed to call Status API's. \n
     
-    If you chose to use Postman to call the Status API's, please see the section 'Postman Collection'. It has downloadable collection files that you can use to get started.
+    The following sections contain sample code snippets for generating tokens. Once the setup is complete, you can find the API specs under Events and Registry. 
+    All the API's have CLI, Javascript and NodeJS code request samples. \n
     
-    You will need JWT toekn and API key to call Status API's. Please find the sample code below.
+    If you chose to use Postman to call the Status API's, please see the section 'Postman Collection'. It has downloadable collection files that you can use to get started. \n
+    
+    You will need JWT token and API key to call Status API's. Please find the sample code below. \n
         
     <SecurityDefinitions />
 
-    ### Sample code to generate JWT and retrieve access token from IMS
 
 
     # Code Snippets
