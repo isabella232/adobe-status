@@ -5,6 +5,7 @@ description: This is the guides overview page of Status API
 
 # Getting started with the Adobe Status API
 
+
 There are several steps to take before using the Status APIs.
 
 * Permissions: Configure permissions for the developer in the Adobe Admin Console.  
