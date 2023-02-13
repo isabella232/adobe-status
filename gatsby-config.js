@@ -13,12 +13,6 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/adobe-status/',
   siteMetadata: {
-    versions: [
-      {
-        title: 'v1.0',
-        selected: true
-      }
-    ],
     pages: [
       {
         title: 'Adobe Status API',
@@ -40,13 +34,15 @@ module.exports = {
     subPages: [
       {
         title: 'Get Started',
-        path: '/guides/',
-        pages: [
-          {
-            title: 'Postman Collection',
-            path: '/guides/using_postman/'
-          }
-        ]
+        path: '/guides/get-started'
+      },
+      {
+        title: 'Product Hierarchy',
+        path: '/guides/product-hierarchy/'
+      },
+      {
+        title: 'Sample API Calls',
+        path: '/guides/sample-api-calls/'
       },
       {
         title: 'Overview',
@@ -54,27 +50,8 @@ module.exports = {
         header: true,
         pages: [
           {
-            title: 'Help',
-            path: '/support/'
-          },
-          {
             title: 'FAQ',
-            path: '/support/FAQ/'
-          },
-          {
-            title: 'How to contribute',
-            path: '/support/contribute/'
-          }
-        ]
-      },
-      {
-        title: 'Community',
-        path: '/support/community/',
-        header: true,
-        pages: [
-          {
-            title: 'Information',
-            path: '/support/community/'
+            path: '/support/'
           }
         ]
       }

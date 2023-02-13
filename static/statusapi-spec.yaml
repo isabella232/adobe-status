@@ -1,43 +1,23 @@
 openapi: 3.0.1
 info:
-  title: Adobe Status API
+  title: Adobe Status API Reference
   description: >
-    Adobe Status API's provide detailed information and real time updates about
-    Adobe cloud products and services outage, disruption and maintenance events.
-    Use these API's to integrate into your own monitoring system or dashboards
-    to view real time events from Adobe Status that can be filtered based on
-    Product, Product Offering, Region, Environment(where available), Locale and
-    Event types.
-
-
-    # Authentication
-
-
-    Adobe Status API need two forms of authentication:
-      - API Key
-      - JWT access token
-
-    Use the [Adobe Developer Console](https://developer.adobe.com/console/home)
-    to obtain client credentials and JWT token by creating a new Project. Once
-    you create a project, you can add Adobe Status API that includes API Keys
-    (Client ID) and other access credentials. You can then obtain a secure
-    access token from Adobe for each API session.
-
-
-    *Note:* A project can include one or more services. In many cases, you will
-    use the same client credentials to access multiple Adobe products and
-    services.
-
-    To learn more about creating projects in Adobe Developer Console, read the
-    [Console getting started
-    guide](https://developer.adobe.com/developer-console/docs/guides/getting-started/). 
+    This guide will help you complete the setup needed to call Status API's. <br /><br />
     
+    The following sections contain sample code snippets for generating tokens. Once the setup is complete, you can find the API specs under Events and Registry. 
+    All the API's have CLI, Javascript and NodeJS code request samples. <br /><br />
+    
+    If you chose to use Postman to call the Status API's, please see the section 'Postman Collection'. It has downloadable collection files that you can use to get started. <br /><br />
+    
+    You will need JWT token and API key to call Status API's. Please find the sample code below.<br />
+        
     <SecurityDefinitions />
 
-    ### Sample code to generate JWT and retrieve access token from IMS
 
 
-    ## NodeJs Code Snipet
+    # Code Snippets
+
+    ## NodeJS
 
     - Make sure `node` installed on your machine 
 
@@ -77,7 +57,7 @@ info:
 
     ```
 
-    ## Python Code Snipet
+    ## Python
 
     - Below code tested in Python version 3.9
 
@@ -202,13 +182,20 @@ paths:
       parameters:
         - name: cloudId
           in: query
-          description: List of cloud ids for which you want to retrieve the events.
+          description: List of cloud ids for which you want to retrieve the cloud detail.
           style: form
           explode: true
           schema:
             type: array
             items:
               type: string
+        - name: cloudName
+          in: query
+          description: Partial or complete cloud name for which you want to retrieve the cloud detail.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -245,6 +232,75 @@ paths:
         - lang: JavaScript
           label: NodeJS
           source: {$ref: code/Node/clouds.js}
+  /api/v1/products:
+    get:
+      tags:
+        - Registry
+      summary: Products
+      description: List all the Adobe Products and Services across Clouds.
+      operationId: productsUsingGET
+      parameters:
+        - name: cloudId
+          in: query
+          description: List of cloud ids for which you want to retrieve the events.
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: productId
+          in: query
+          description: List of product ids for which you want to retrieve the product detail.
+          style: form
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: productName
+          in: query
+          description: Partial or complete product name for which you want to retrieve the product detail.
+          style: form
+          explode: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad Request
+          content: {}
+        '401':
+          description: Unauthorized
+          content: {}
+        '403':
+          description: Forbidden
+          content: {}
+        '404':
+          description: Not Found
+          content: {}
+        '500':
+          description: Internal Server Error
+          content: {}
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >-
+            curl --location --request GET 'https://status.adobe.io/api/v1/products?api_key=<key>&cloudId=<string>&productId=<string>' \
+            --header 'Authorization: Bearer <token>'
+        - lang: JavaScript
+          label: JavaScript
+          source: {$ref: code/JS/products.js}
+        - lang: JavaScript
+          label: NodeJS
+          source: {$ref: code/Node/products.js}
   /api/v1/eventTypes:
     get:
       tags:
@@ -759,6 +815,49 @@ paths:
         - lang: JavaScript
           label: NodeJS
           source: {$ref: code/Node/scheduled.js}
+  /api/v1/regions:
+    get:
+      tags:
+        - Registry
+      summary: Regions
+      description: List all the regions that can be impacted by Adobe Status Events.
+      operationId: regionsUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RegionDto'
+        '400':
+          description: Bad Request
+          content: {}
+        '401':
+          description: Unauthorized
+          content: {}
+        '403':
+          description: Forbidden
+          content: {}
+        '404':
+          description: Not Found
+          content: {}
+        '500':
+          description: Internal Server Error
+          content: {}
+      x-codeSamples:
+        - lang: cURL
+          label: CLI
+          source: >-
+            curl --location --request GET 'https://status.adobe.io/api/v1/regions?api_key=<key>' \
+            --header 'Authorization: Bearer <token>'
+        - lang: JavaScript
+          label: JavaScript
+          source: {$ref: code/JS/regions.js}
+        - lang: JavaScript
+          label: NodeJS
+          source: {$ref: code/Node/regions.js}
   /api/v1/locales:
     get:
       tags:
@@ -811,6 +910,14 @@ paths:
       summary: Messages
       description: List all the messages for an event impacting Adobe products.
       operationId: messagesUsingGET
+      parameters:
+        - name: messageToken
+          in: query
+          description: Message token for which you want to retrieve the messages.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -864,6 +971,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: messageToken
+          in: query
+          description: Message token for which you want to retrieve the messages.
+          style: form
+          explode: true
+          schema:
+            type: string
       responses:
         '200':
           description: OK
@@ -900,111 +1014,6 @@ paths:
         - lang: JavaScript
           label: NodeJS
           source: {$ref: code/Node/messagesbylocale.js}
-  /api/v1/products:
-    get:
-      tags:
-        - Registry
-      summary: Products
-      description: List all the Adobe Products and Services across Clouds.
-      operationId: productsUsingGET
-      parameters:
-        - name: cloudId
-          in: query
-          description: List of cloud ids for which you want to retrieve the events.
-          style: form
-          explode: true
-          schema:
-            type: array
-            items:
-              type: string
-        - name: productId
-          in: query
-          description: List of product ids for which you want to retrieve the events.
-          style: form
-          explode: true
-          schema:
-            type: array
-            items:
-              type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Product'
-        '400':
-          description: Bad Request
-          content: {}
-        '401':
-          description: Unauthorized
-          content: {}
-        '403':
-          description: Forbidden
-          content: {}
-        '404':
-          description: Not Found
-          content: {}
-        '500':
-          description: Internal Server Error
-          content: {}
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: >-
-            curl --location --request GET 'https://status.adobe.io/api/v1/products?api_key=<key>&cloudId=<string>&productId=<string>' \
-            --header 'Authorization: Bearer <token>'
-        - lang: JavaScript
-          label: JavaScript
-          source: {$ref: code/JS/products.js}
-        - lang: JavaScript
-          label: NodeJS
-          source: {$ref: code/Node/products.js}
-  /api/v1/regions:
-    get:
-      tags:
-        - Registry
-      summary: Regions
-      description: List all the regions that can be impacted by Adobe Status Events.
-      operationId: regionsUsingGET
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/RegionDto'
-        '400':
-          description: Bad Request
-          content: {}
-        '401':
-          description: Unauthorized
-          content: {}
-        '403':
-          description: Forbidden
-          content: {}
-        '404':
-          description: Not Found
-          content: {}
-        '500':
-          description: Internal Server Error
-          content: {}
-      x-codeSamples:
-        - lang: cURL
-          label: CLI
-          source: >-
-            curl --location --request GET 'https://status.adobe.io/api/v1/regions?api_key=<key>' \
-            --header 'Authorization: Bearer <token>'
-        - lang: JavaScript
-          label: JavaScript
-          source: {$ref: code/JS/regions.js}
-        - lang: JavaScript
-          label: NodeJS
-          source: {$ref: code/Node/regions.js}
 components:
   schemas:
     Cloud:
