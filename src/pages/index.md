@@ -15,8 +15,8 @@ The Adobe Status APIs are a collection of APIs that provide detailed information
 
 #### Resources
 
-* [Quickstart Guide](https://developer-stage.adobe.com/adobe-status/guides/)
-* [API Reference](https://developer-stage.adobe.com/adobe-status/api/)
+* [Quickstart Guide](/adobe-status/guides/)
+* [API Reference](/adobe-status/api/)
 * [Github Repo](https://github.com/AdobeDocs/dev-site)
 
 ## Overview
@@ -25,8 +25,8 @@ The Adobe Status 1.0 APIs allow you to directly call Adobe's servers to query an
 
 Please check out the resources here. The documentation assumes that you have an intermediate understanding of Adobe Status.
 
-* [Quickstart Guide](https://developer-stage.adobe.com/adobe-status/guides/)
-* [API Reference](https://developer-stage.adobe.com/adobe-status/api/)
+* [Quickstart Guide](/adobe-status/guides/)
+* [API Reference](/adobe-status/api/)
 * [Github Repo](https://github.com/AdobeDocs/dev-site)
 
 
