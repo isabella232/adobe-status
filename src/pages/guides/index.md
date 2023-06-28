@@ -5,7 +5,6 @@ description: This is the guides overview page of Status API
 
 # Getting started with the Adobe Status API
 
-
 There are several steps to take before using the Status APIs.
 
 * Permissions: Configure permissions for the developer in the Adobe Admin Console.  
@@ -70,7 +69,6 @@ curl -X POST 'https://ims-na1.adobelogin.com/ims/token/v3?client_id={CLIENT_ID}'
 
 ![](../../../static/images/steps/generate-access-token.png)
 
-
 ### Generating access tokens using standard OAuth2 libraries
 
 We recommend using a standard OAuth 2.0 library to implement your application's access token generation logic. The  OAuth community site https://oauth.net has a huge list of community-maintained OAuth2 libraries. Some widely known and maintained OAuth2 libraries from that list are -
@@ -83,4 +81,3 @@ We recommend using a standard OAuth 2.0 library to implement your application's 
 <InlineAlert slots="text"/>
 
 Using industry-standard libraries is the quickest and most secure way of integrating with OAuth. We recommend developers diligently pick the OAuth 2.0 library that works best for their application.
-
