@@ -42,10 +42,6 @@ Once you are a developer for a Adobe product profile, you can create an Sttaus A
 To learn more about creating projects in Adobe Developer Console, read the [Console getting started guide](https://developer.adobe.com/developer-console/docs/guides/getting-started/).
 At this point, you decide how you want to authenticate with the API.
 
-## Authentication
-
-Status API needs JWT token for authentication. Follow the steps below to setup your access token -
-
 ## Setting up the OAuth Server-to-Server credential
 
 Status API needs OAuth token for authentication. Follow the below steps to genrate OAuth Server-to-Server credential.
