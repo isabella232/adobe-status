@@ -99,7 +99,7 @@ We recommend using a standard OAuth 2.0 library to implement your application's 
 
 Using industry-standard libraries is the quickest and most secure way of integrating with OAuth. We recommend developers diligently pick the OAuth 2.0 library that works best for their application.
 
-## Rotating client secrets 
+## Rotating client secrets
 
 The OAuth Server-to-Server credentials allow you to rotate your client secret as needed.
 
