@@ -34,11 +34,11 @@ info:
     const oauth_token_endpoint = 'https://ims-na1.adobelogin.com/ims/token/v3';
 
 
-    // Get the below values from developer console project's 'OAuth Server-to-Server' credentials page
+    // Get the below values from the developer console project's 'OAuth Server-to-Server' credentials page
 
     const CLIENT_ID = 'a68bc04-----------92e86df4513ff';
 
-    const CLIENT_SECRET = 'p8e-OnGpSx--------OzdtFqjZeapn9_T4d';
+    const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
     const SCOPES = 'creative_cloud, openid, additional_info.ownerOrg, AdobeID, org.read, read_organizations, additional_info.roles, gnav, additional_info.company, additional_info.projectedProductContext';
 
@@ -78,7 +78,7 @@ info:
 
     - Below code tested in Python version 3.9
 
-    - Install  `pip3 install "requests"`
+    - Install requests and os. eg., `pip3 install "requests"`
 
     - Get the credentials from the developer console website -> 'OAuth Server-to-Server' credentials page of your project and replace the values in the sample code 
 
@@ -86,6 +86,8 @@ info:
     ```python
 
     import requests
+    
+    import os
 
 
     # Update CLIENT_ID and CLIENT_SECRET with your config
@@ -94,7 +96,7 @@ info:
 
     CLIENT_ID = "a68bc04-----------92e86df4513ff";
 
-    CLIENT_SECRET = "p8e-OnGpSx--------OzdtFqjZeapn9_T4d";
+    CLIENT_SECRET = os.environ['CLIENT_SECRET'];
 
     SCOPES = "creative_cloud, openid, additional_info.ownerOrg, AdobeID, org.read, read_organizations, additional_info.roles, gnav, additional_info.company, additional_info.projectedProductContext";
 
