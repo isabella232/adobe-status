@@ -108,4 +108,3 @@ Rotating your application's client secrets is highly recommended in case of a le
 ## Migration Guide
 
 Log in to the Adobe Developer Console and open the [Projects Tab](https://developer.adobe.com/console/projects) to find out which of your Adobe applications and integrations are using the Service Account (JWT) credential. If any of your project's integration is using the JWT credential, then follow the [Migration Guide](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#migration-overview) to update your integration to OAuth Server-to-Server credentials.
-
