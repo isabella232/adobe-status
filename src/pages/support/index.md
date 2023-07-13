@@ -31,4 +31,4 @@ Yes. Please refer to the API Reference menu item for NodeJs and Python code snip
 
 ## How do I get more help if I run into issues?
 
-Please contact Adobe support [here](https://experienceleague.adobe.com/?support-tab=home#support). 
+Please contact Adobe support [here](https://experienceleague.adobe.com/?support-tab=home#support).
