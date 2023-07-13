@@ -82,7 +82,8 @@ curl -X POST 'https://ims-na1.adobelogin.com/ims/token/v3?client_id={CLIENT_ID}'
 
 ## Refreshing access tokens
 
-The access token becomes invalid after its expiry time. `expires_in` represents the expiry time which is usually 24 hours from the token generation. You do not need a refresh token for OAuth Server-to-Server credentials. You can always request a new access token directly using your *client_id*, *client_secret*, and *scopes*. 
+The access token becomes invalid after its expiry time, `expires_in` represents the expiry time which is usually 24 hours from the token generation. You do not need a refresh token for OAuth Server-to-Server credentials. You can always request a new access token directly using your *client_id*, *client_secret*, and *scopes*. 
+
 
 ![](../../../static/images/steps/generate-access-token.png)
 
@@ -99,11 +100,13 @@ We recommend using a standard OAuth 2.0 library to implement your application's 
 
 Using industry-standard libraries is the quickest and most secure way of integrating with OAuth. We recommend developers diligently pick the OAuth 2.0 library that works best for their application.
 
+
 ## Rotating client secrets 
 
 The OAuth Server-to-Server credentials allow you to rotate your client secret as needed. 
 
 Rotating your application's client secrets is highly recommended in case of a leak or unauthorized access. Furthermore, rotating client secrets periodically is an industry-standard practice that strengthens your application security posture. Follow [Rotating client secrets](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/#rotating-client-secrets) guide for more information.
+
 
 ## Migration Guide
 
