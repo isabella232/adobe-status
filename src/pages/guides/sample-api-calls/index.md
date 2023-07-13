@@ -9,7 +9,7 @@ API Key: StatusAdobeIOClient
 Example of a complete path for making an API call -
 
 ```bash
-curl --location --request GET 'https://status.adobe.io/api/v1/events?api_key=<key> --header 'Authorization: Bearer <JWT token>'
+curl --location --request GET 'https://status.adobe.io/api/v1/events?api_key=<key> --header 'Authorization: Bearer <OAuth token>'
 ```
 
 - Get Product id
@@ -18,7 +18,7 @@ curl --location --request GET 'https://status.adobe.io/api/v1/events?api_key=<ke
     - Example
 
     ```bash
-    curl --location --request GET 'https://status.adobe.io/api/v1/clouds?cloudId=503460&api_key=<key> --header 'Authorization: Bearer <JWT token>'
+    curl --location --request GET 'https://status.adobe.io/api/v1/clouds?cloudId=503460&api_key=<key> --header 'Authorization: Bearer <OAuth token>'
     ```
 
     - For code samples in Javascript, CLI and Node JS - https://statusapi-doc-nld2.cloud.adobe.io/#tag/Registry
@@ -29,7 +29,7 @@ curl --location --request GET 'https://status.adobe.io/api/v1/events?api_key=<ke
     - Example
 
     ```bash
-    curl --location --request GET 'https://status.adobe.io/api/v1/events?from=2022-11-02&to=2022-11-03&api_key=StatusAdobeIOClient&productIds=503462' --header 'Authorization: Bearer <JWT token>'
+    curl --location --request GET 'https://status.adobe.io/api/v1/events?from=2022-11-02&to=2022-11-03&api_key=StatusAdobeIOClient&productIds=503462' --header 'Authorization: Bearer <OAuth token>'
     ```
 
     - For code samples in Javascript, CLI and Node JS - https://statusapi-doc-nld2.cloud.adobe.io/#tag/Events
@@ -38,7 +38,7 @@ curl --location --request GET 'https://status.adobe.io/api/v1/events?api_key=<ke
     - Example
 
     ```bash
-    curl --location --request GET 'https://status.adobe.io/api/v1/messages/en?languageCode=en&api_key=<key> --header 'Authorization: Bearer <JWT token>'
+    curl --location --request GET 'https://status.adobe.io/api/v1/messages/en?languageCode=en&api_key=<key> --header 'Authorization: Bearer <OAuth token>'
     ```
 
      - For code samples in Javascript, CLI and Node JS - https://statusapi-doc-nld2.cloud.adobe.io/#tag/Registry/operation/messagesUsingGET_1

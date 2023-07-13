@@ -22,7 +22,7 @@ Please refer to the Guides -> Getting Started section of the Status API document
 Please refer to the Guides -> Product Hierarchy section.
 
 ## Are there any sample code snippets that I can use?
-Yes. Please refer to API Reference menu item for NodeJs and Python code snippet to generate JWT access token. If you use Postman, you can refer to Postman Collection section on API Reference for a downloadable Postman collection and environment variable files. All API's come with CLI, Javascript and NodeJS samples.
+Yes. Please refer to API Reference menu item for NodeJs and Python code snippet to generate OAuth access token. If you use Postman, you can refer to Postman Collection section on API Reference for a downloadable Postman collection and environment variable files. All API's come with CLI, Javascript and NodeJS samples.
 
 ## How do I get more help if I run into issues?
 Please contact Adobe support [here](https://experienceleague.adobe.com/?support-tab=home#support). 
