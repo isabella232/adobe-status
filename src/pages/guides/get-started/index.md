@@ -1,6 +1,6 @@
 ---
 title: Guides - Status API
-description: This is the guides overview page of Status API 
+description: This is the guides overview page of the Status API 
 ---
 
 # Getting started with the Adobe Status API
@@ -105,6 +105,6 @@ The OAuth Server-to-Server credentials allow you to rotate your client secret as
 
 Rotating your application's client secrets is highly recommended in case of a leak or unauthorized access. Furthermore, rotating client secrets periodically is an industry-standard practice that strengthens your application security posture. Follow [Rotating client secrets](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/#rotating-client-secrets) guide for more information.
 
-## Migration Guide
+## Migration from JWT to OAuth 2.0
 
 Log in to the Adobe Developer Console and open the [Projects Tab](https://developer.adobe.com/console/projects) to find out which of your Adobe applications and integrations are using the Service Account (JWT) credential. If any of your project's integration is using the JWT credential, then follow the [Migration Guide](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/#migration-overview) to update your integration to OAuth Server-to-Server credentials.
