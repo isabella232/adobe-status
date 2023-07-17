@@ -146,7 +146,7 @@ info:
 
     # Throttling Policy
     
-    We do have a throttling policy in place, we accept up to 50 requests / 5 secs per api-key. Your throttled requests will receive an HTTP Status 429 (Too Many Requests) response with a Retry-After header, following the [RFC 7231](https://tools.ietf.org/html/rfc7231#section-7.1.3) HTTP standard.
+    We have a throttling policy in place. We accept up to 50 requests / 5 secs per user's session. Your throttled requests will receive an error code—HTTP Status 429 (Too Many Requests) response with a Retry-After header, following the [RFC 7231](https://tools.ietf.org/html/rfc7231#section-7.1.3) HTTP standard.
 
 
   contact:
