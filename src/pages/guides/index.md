@@ -80,7 +80,7 @@ curl -X POST 'https://ims-na1.adobelogin.com/ims/token/v3?client_id={CLIENT_ID}'
 }
 ```
 
-## Refreshing access tokens
+### Refreshing access tokens
 
 The access token becomes invalid after its expiry time, `expires_in` represents the expiry time which is usually 24 hours from the token generation. You do not need a refresh token for OAuth Server-to-Server credentials. You can always request a new access token directly using your *client_id*, *client_secret*, and *scopes*.
 
