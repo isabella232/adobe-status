@@ -9,7 +9,7 @@ info:
     
     If you chose to use Postman to call the Status API's, please see the section 'Postman Collection'. It has downloadable collection files that you can use to get started. <br /><br />
     
-    You will need JWT token and API key to call Status API's. Please find the sample code below.<br />
+    You will need OAuth token and API key to call Status API's. Please find the sample code below.<br />
         
     <SecurityDefinitions />
 
@@ -19,40 +19,57 @@ info:
 
     ## NodeJS
 
-    - Make sure `node` installed on your machine 
+    - Make sure `node` installed on your machine
 
-    - Add all required packages into the project eg., `npm install @adobe/jwt-auth` 
+    - Add all required packages into the project eg., `npm install axios`
 
-    - Get the credentials from the developer console website -> 'Service Accounts(JWT)' credentials page of your project and replace the values in the sample code 
-
-    - Set the location of the private key downloaded during the Adobe Status API onboarding in the developer console
+    - Get the credentials from the developer console website -> 'OAuth Server-to-Server' credentials page of your project and replace the values in the sample code
 
 
     ```javascript
 
-    const auth = require("@adobe/jwt-auth");
-
-    const fs = require('fs');
-    
-
-    // Set the location of your priviate key downloaded during the Status API onboading in the Adobe Developer Console
-
-    const privateKey = fs.readFileSync('data/private.key', 'utf8');
+    const axios = require("axios")
 
 
-    // Get the credentials from developer console project's setting page
+    const oauth_token_endpoint = 'https://ims-na1.adobelogin.com/ims/token/v3';
 
-    const credentials = {
-        clientId: "80b722-----------cbc3563", //Application ID (Client ID)
-        technicalAccountId: "583D1F2E--------494125@techacct.adobe.com", //Technical account ID
-        orgId: "44BA--------A494024@AdobeOrg", // Org ID
-        clientSecret: "s8e-fo5----------Gxi4Xpsz1", //Client Secret
-        metaScopes: ["ent_status_api"], // Metascopes
-        privateKey: privateKey
+
+    // Get the below values from the developer console project's 'OAuth Server-to-Server' credentials page
+
+    const CLIENT_ID = 'a68bc04-----------92e86df4513ff';
+
+    const CLIENT_SECRET = process.env.CLIENT_SECRET;
+
+    const SCOPES = 'creative_cloud, openid, additional_info.ownerOrg, AdobeID, org.read, read_organizations, additional_info.roles, gnav, additional_info.company, additional_info.projectedProductContext';
+
+
+    const query_params= `client_id=${CLIENT_ID}`;
+
+    const REQUEST_URL = oauth_token_endpoint + '?' + query_params;
+
+
+
+    const get_access_token = async auth_code => {
+      
+      return await axios ({
+        method: 'post',
+        url: REQUEST_URL,
+        data: {
+          'client_secret': CLIENT_SECRET,
+          'grant_type': 'client_credentials',
+          'scope': SCOPES
+        },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
     };
 
-    auth(credentials).then((response) => {
-        console.log(response); // access tocken
+
+    get_access_token().then((response)=> {
+      if(response.status === 200) {
+        console.log(response.data); // access token 
+      }
     });
 
     ```
@@ -61,74 +78,48 @@ info:
 
     - Below code tested in Python version 3.9
 
-    - Install below packages :
+    - Install requests and os. eg., `pip3 install "requests"`
 
-      - `pip3 install PyJWT`
-
-      - `pip3 install "pyjwt[crypto]"`
-
-      - `pip3 install "requests"`
-
-    - Get the credentials from the developer console website -> 'Service Accounts(JWT)' credentials page of your project and replace the values in the sample code 
-
-    - Set the location of the private key downloaded during the Status API onboarding in the developer console
+    - Get the credentials from the developer console website -> 'OAuth Server-to-Server' credentials page of your project and replace the values in the sample code 
 
 
     ```python
 
-    import datetime;
-
-    import json;
-
-    import jwt;
-
-    import os;
-
-    import requests;
+    import requests
+    
+    import os
 
 
-    url = 'https://ims-na1.adobelogin.com/ims/exchange/jwt';
-
-
-    # Replace Organization_ID, Technical_Account_ID and Client_ID with yours
+    # Update CLIENT_ID and CLIENT_SECRET with your config
 
     # which can be obtain from the Adobe Developer Console integration
 
-    jwtPayloadRaw = """{ "iss": "<Organization_ID>", 
-                        "sub": "<Technical_Account_ID>", 
-                      "https://ims-na1.adobelogin.com/s/ent_status_api": true,
-                      "aud": "https://ims-na1.adobelogin.com/c/<Client_ID>"}"""; 
+    CLIENT_ID = "a68bc04-----------92e86df4513ff";
+
+    CLIENT_SECRET = os.environ['CLIENT_SECRET'];
+
+    SCOPES = "creative_cloud, openid, additional_info.ownerOrg, AdobeID, org.read, read_organizations, additional_info.roles, gnav, additional_info.company, additional_info.projectedProductContext";
+
+    headers = {"content-type": "application/x-www-form-urlencoded"}
+
+    url = "https://ims-na1.adobelogin.com/ims/token/v3"
 
 
-    jwtPayloadJson = json.loads(jwtPayloadRaw);
+    data = { 
+      "client_secret": CLIENT_SECRET,
+        "grant_type": "client_credentials",
+        "scope": SCOPES
+    }
 
-    jwtPayloadJson["exp"] = datetime.datetime.utcnow() + datetime.timedelta(seconds=30);
+    params = {'client_id': CLIENT_ID}
 
+    response = requests.post(url, params=params, data=data, headers=headers)
 
-    accessTokenRequestPayload = {'client_id': '7028************dd5'  #Your Client ID from the Adobe Developer Console integration
-                                ,'client_secret': 'p8******************1ae'};  #Your Client Secret from the Adobe Developer Console integration
+    if(response.status_code == 200):
+      print(response.text) # access token
 
-    #Set the location of your priviate key downloaded during the Status API onboading in the Adobe Developer Console
-
-    keyfile = open(os.path.join(os.path.expanduser('~'),'data/private.key'),'r'); 
-
-
-    private_key = keyfile.read();
-
-    jwttoken = jwt.encode(jwtPayloadJson, private_key, algorithm='RS256');
-
-    accessTokenRequestPayload['jwt_token'] = jwttoken;
-
-    result = requests.post(url, data = accessTokenRequestPayload);
-
-    resultjson = json.loads(result.text);
-
-    print(resultjson["access_token"]);
 
     ```
-
-
-    for more [JWT sample codes](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT/samples/)
 
 
     # Postman Collection 
@@ -137,11 +128,7 @@ info:
 
     - Import both collection and environment variables into your postman 
 
-    - Replace below credentials with yours and run collection endpoints 
-
-      - CLIENT_ID, TECHNICAL_ACCOUNT_ID , TECHNICAL_ACCOUNT_ID and CLIENT_SECRET  
-
-      - PRIVATE_KEY – Replace private key which is obtained during the Adobe Status API onboarding in the developer console
+    - Replace CLIENT_ID and CLIENT_SECRET in environment variable with yours and run collection endpoints 
 
     ### Environment Variable Reference
 
@@ -152,6 +139,10 @@ info:
     ![alt text](/adobe-status/images/status-api-collection.png "Adobe Status API Collection")
 
     ![alt text](/adobe-status/images/status-api-testing.png "Adobe Status API Collection Endpoint Validation")
+
+    # Throttling Policy
+    
+    We have a throttling policy in place. We accept up to 50 requests / 5 secs per user's session. Your throttled requests will receive an error code—HTTP Status 429 (Too Many Requests) response with a Retry-After header, following the [RFC 7231](https://tools.ietf.org/html/rfc7231#section-7.1.3) HTTP standard.
 
 
   contact:
@@ -216,6 +207,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -286,6 +280,9 @@ paths:
         '404':
           description: Not Found
           content: {}
+        '429':
+          description: Too Many Requests
+          content: {}
         '500':
           description: Internal Server Error
           content: {}
@@ -330,6 +327,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -446,6 +446,9 @@ paths:
         '404':
           description: Not Found
           content: {}
+        '429':
+          description: Too Many Requests
+          content: {}
         '500':
           description: Internal Server Error
           content: {}
@@ -561,6 +564,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -681,6 +687,9 @@ paths:
         '404':
           description: Not Found
           content: {}
+        '429':
+          description: Too Many Requests
+          content: {}
         '500':
           description: Internal Server Error
           content: {}
@@ -800,6 +809,9 @@ paths:
         '404':
           description: Not Found
           content: {}
+        '429':
+          description: Too Many Requests
+          content: {}
         '500':
           description: Internal Server Error
           content: {}
@@ -842,6 +854,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -887,6 +902,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -938,6 +956,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -998,6 +1019,9 @@ paths:
           content: {}
         '404':
           description: Not Found
+          content: {}
+        '429':
+          description: Too Many Requests
           content: {}
         '500':
           description: Internal Server Error
@@ -1823,11 +1847,10 @@ components:
   securitySchemes:
     Authorization:
       description: >-
-        [To generate JWT Authorization
-        token](https://developer.adobe.com/developer-console/docs/guides/authentication/JWT)
+        [To generate OAuth Authorization
+        token](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/)
       type: http
       scheme: bearer
-      bearerFormat: JWT
     api_key:
       type: apiKey
       description: Use the api key `StatusAdobeIOClient`
